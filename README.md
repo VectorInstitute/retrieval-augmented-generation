@@ -22,7 +22,7 @@ This repository includes several reference implementations showing different app
 Start by cloning this git repository to a local folder:
 
 ```
-git clone https://github.com/VectorInstitute/rag_bootcamp
+git clone https://github.com/VectorInstitute/rag-bootcamp
 ```
 
 ## [Optional] Build the virtual Python environments
