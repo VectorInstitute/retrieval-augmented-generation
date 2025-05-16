@@ -1,4 +1,4 @@
-[Open in colab](https://colab.research.google.com/drive/1FPHyR5rCfzJWOdvQs1eAEyvLr6x4DT6H?usp=sharing)
+[![Open in Colab]((https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1FPHyR5rCfzJWOdvQs1eAEyvLr6x4DT6H?usp=sharing)
 
 # RAG Bootcamp: Web Search
 
