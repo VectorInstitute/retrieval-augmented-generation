@@ -2,6 +2,7 @@
 env/
 venv/
 rag_venv/
+.venv/
 
 # notebook folders
 .ipynb_checkpoints/
@@ -20,3 +21,11 @@ old/
 
 .env
 logs/
+
+.DS_Store
+
+data/
+.weaviate*
+source_documents/
+*.csv
+*.db
