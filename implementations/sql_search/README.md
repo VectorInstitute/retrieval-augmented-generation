@@ -20,13 +20,20 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
     pip install uv
     ```
 
-2. **Install dependencies using uv:**
+2. **Create and activate a virtual environment using uv:**
+
+    ```bash
+    uv venv .venv
+    source .venv/bin/activate
+    ```
+
+3. **Install dependencies using uv:**
 
     ```bash
     uv sync --dev
     ```
 
-3. **(Optional) Install GPU dependencies:**
+4. **(Optional) Install GPU dependencies:**
 
     If you are on a Linux machine with GPU support, you can install the GPU dependency group:
 
@@ -34,7 +41,7 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
     uv sync --dev --group gpu
     ```
 
-4. **Configure environment variables:**
+5. **Configure environment variables:**
 
     Copy the example environment file and update it with your settings:
 
@@ -43,13 +50,6 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
     ```
 
     Update the value for `OPENAI_API_KEY`, `KAGGLE_USERNAME` and `KAGGLE_KEY` env variables.
-
-5. **Create and activate a virtual environment using uv:**
-
-    ```bash
-    uv venv .venv
-    source .venv/bin/activate
-    ```
 
 6. **Install the Jupyter kernel:**
 
