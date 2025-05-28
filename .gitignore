@@ -8,7 +8,7 @@ rag_venv/
 .ipynb_checkpoints/
 
 # data folders
-# data/
+data/
 */source-materials/
 
 # keys
@@ -24,7 +24,6 @@ logs/
 
 .DS_Store
 
-data/
 .weaviate*
 source_documents/
 *.csv

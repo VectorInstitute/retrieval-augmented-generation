@@ -86,6 +86,7 @@ Each notebook in this repository includes an **"Open in Colab"** badge at the to
 1. Navigate to the desired notebook in the GitHub repository.
 2. Click the **"Open in Colab"** badge at the top of the notebook.
 3. The notebook will open in Google Colab, where you can run the code interactively or make a copy to make changes to it.
+4. Select T4 GPU as the runtime type.
 
 > **Note:**  
 > Some features (such as access to local files or environment variables) may require additional configuration or may not be fully supported in Colab. For best results, review any instructions provided in the notebook itself.
