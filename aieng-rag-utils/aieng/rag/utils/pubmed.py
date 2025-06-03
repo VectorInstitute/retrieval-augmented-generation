@@ -1,7 +1,5 @@
 import os
 import re
-import platform
-import torch
 import faiss
 import weaviate
 import json

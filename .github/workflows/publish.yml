@@ -1,0 +1,51 @@
+name: publish package
+permissions:
+  contents: write
+  pull-requests: write
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install apt dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install libcurl4-openssl-dev libssl-dev
+      - uses: actions/checkout@v4.2.2
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@f0ec1fc3b38f5e7cd731bb6ce540c5af426746bb
+        with:
+          # Install a specific version of uv.
+          version: "0.7.6"
+          enable-cache: true
+
+      - name: "Set up Python"
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version-file: ".python-version"
+
+      - name: Install the project
+        run: uv venv && source .venv/bin/activate && uv sync --dev
+
+      - name: Build package
+        run: cd aieng-rag-utils && uv build
+
+      - name: Publish package
+        uses: pypa/gh-action-pypi-publish@76f52bc884231f62b9a034ebfe128415bbaabdfc
+        with:
+          user: __token__
+          password: ${{ secrets.PYPI_API_TOKEN }}
+          packages-dir: dist/
+
+      - name: Create GitHub Release
+        id: create_release
+        uses: ncipollo/release-action@440c8c1cb0ed28b9f43e4d1d670870f059653174 # v1.16.0
+        with:
+          artifacts: "dist/*"
+          generateReleaseNotes: true
