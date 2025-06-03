@@ -134,7 +134,7 @@ class PubMedQATaskDataset(data.Dataset):
 
             for file_idx in range(len(context_files)):
                 filepath = os.path.join(pubmed_kb_dir, f"context{file_idx}.{file_ext}")
-                with open(filepath, "w") as f:
+                with open(filepath, "w", encoding="utf-8") as f:
                     f.write(context_files[file_idx])
 
         else:
@@ -143,7 +143,7 @@ class PubMedQATaskDataset(data.Dataset):
                 filepath = os.path.join(
                     pubmed_kb_dir, f'{self.data[idx]["id"]}.{file_ext}'
                 )
-                with open(filepath, "w") as f:
+                with open(filepath, "w", encoding="utf-8") as f:
                     f.write(self.data[idx]["context"])
 
 

@@ -31,15 +31,7 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
     uv sync --dev
     ```
 
-4. **(Optional) Install GPU dependencies:**
-
-    If you are on a Linux machine with GPU support, you can install the GPU dependency group:
-
-    ```bash
-    uv sync --dev --group gpu
-    ```
-
-5. **Configure environment variables:**
+4. **Configure environment variables:**
 
     Copy the example environment file and update it with your settings:
 
@@ -50,13 +42,13 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
     Update the value for `OPENAI_API_KEY`, `WEAVIATE_API_KEY`, `WEAVIATE_CLUSTER_URL` env variables.
 
 
-6. **Install the Jupyter kernel:**
+5. **Install the Jupyter kernel:**
 
     ```bash
     uv run ipython kernel install --user --name=rag-bootcamp  
     ```
 
-7. **Start Jupyter Lab with environment variables loaded:**
+6. **Start Jupyter Lab with environment variables loaded:**
 
     ```bash
     uv run --env-file .env jupyter lab
