@@ -12,7 +12,7 @@ def get_device_name() -> str:
 
     device = "cpu"
 
-    if platform.system() == "Linux":
+    if platform.system() == "Linux" and torch.cuda.is_available():
         device = "cuda"
     elif platform.system() == "Darwin" and hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
         device = "mps"
