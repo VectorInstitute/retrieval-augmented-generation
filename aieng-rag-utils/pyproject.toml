@@ -1,6 +1,6 @@
 [project]
 name = "aieng-rag-utils"
-version = "0.1.0"
+version = "0.1.0a1"
 description = "Helper modules for AI Engineering RAG Bootcamp reference implementations"
 authors = [{name = "Vector AI Engineering", email = "ai_engineering@vectorinstitute.ai"}]
 requires-python = ">=3.10"
