@@ -1,6 +1,7 @@
 import platform
 import torch
 
+
 def get_device_name() -> str:
     """
     Get the name of the device to be used for computation.
@@ -14,7 +15,11 @@ def get_device_name() -> str:
 
     if platform.system() == "Linux" and torch.cuda.is_available():
         device = "cuda"
-    elif platform.system() == "Darwin" and hasattr(torch.backends, "mps") and torch.backends.mps.is_available():
+    elif (
+        platform.system() == "Darwin"
+        and hasattr(torch.backends, "mps")
+        and torch.backends.mps.is_available()
+    ):
         device = "mps"
 
     return device

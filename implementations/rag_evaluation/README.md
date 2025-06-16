@@ -13,7 +13,7 @@ There are many different metrics to determine if a RAG workflow is producing hig
 ## Requirements
 
 * Python 3.10+
-* [OpenAI](https://platform.openai.com/) API Key 
+* [OpenAI](https://platform.openai.com/) API Key
 
 ## Setup Instructions
 
@@ -50,7 +50,7 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
 5. **Install the Jupyter kernel:**
 
     ```bash
-    uv run ipython kernel install --user --name=rag-bootcamp  
+    uv run ipython kernel install --user --name=rag-bootcamp
     ```
 
 6. **Start Jupyter Lab with environment variables loaded:**

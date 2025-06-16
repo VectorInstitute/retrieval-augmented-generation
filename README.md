@@ -60,7 +60,7 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
 5. **Install the Jupyter kernel:**
 
     ```bash
-    uv run ipython kernel install --user --name=rag-bootcamp  
+    uv run ipython kernel install --user --name=rag-bootcamp
     ```
 
 6. **Start Jupyter Lab with environment variables loaded:**
@@ -80,5 +80,5 @@ Each notebook in this repository includes an **"Open in Colab"** badge at the to
 3. The notebook will open in Google Colab, where you can run the code interactively or make a copy to make changes to it.
 4. Select T4 GPU as the runtime type.
 
-> **Note:**  
+> **Note:**
 > Some features (such as access to local files or environment variables) may require additional configuration or may not be fully supported in Colab. For best results, review any instructions provided in the notebook itself.

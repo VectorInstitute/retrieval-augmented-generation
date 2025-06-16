@@ -12,7 +12,6 @@ from llama_index.readers.s3 import S3Reader
 
 
 class DocumentReader:
-
     def __init__(
         self,
         directory_path: str = None,
@@ -44,9 +43,9 @@ class DocumentReader:
     def _load_local_pdfs(self):
         if not self.directory_path or not os.path.exists(self.directory_path):
             raise FileNotFoundError(f"Directory {self.directory_path} does not exist.")
-        if not any(f.endswith('.pdf') for f in os.listdir(self.directory_path)):
+        if not any(f.endswith(".pdf") for f in os.listdir(self.directory_path)):
             raise FileNotFoundError(f"No PDF files found in {self.directory_path}.")
-        
+
         if self.create_nodes:
             docs = SimpleDirectoryReader(input_dir=self.directory_path).load_data()
         else:
@@ -71,11 +70,13 @@ class DocumentReader:
             raise ValueError("k must be a positive integer.")
 
         # Perform a web search and get the top k results
-        for result_url in search(self.web_search_query, num_results=self.search_k, sleep_interval=2):
+        for result_url in search(
+            self.web_search_query, num_results=self.search_k, sleep_interval=2
+        ):
             if result_url and result_url.startswith("http"):
                 try:
                     response = requests.get(result_url)
-                    soup = BeautifulSoup(response.content, 'html.parser')
+                    soup = BeautifulSoup(response.content, "html.parser")
                     docs.append(soup.get_text())
                 except Exception as e:
                     print(f"Failed to fetch {result_url}: {e}")
@@ -83,7 +84,10 @@ class DocumentReader:
         if self.create_nodes:
             docs = StringIterableReader().load_data(texts=docs)
         else:
-            docs = [Document(page_content=web_txt, metadata={"source": "web"}) for web_txt in docs]
+            docs = [
+                Document(page_content=web_txt, metadata={"source": "web"})
+                for web_txt in docs
+            ]
 
         return docs
 
@@ -96,7 +100,9 @@ class DocumentReader:
         elif self.web_search_query:
             self.docs = self._load_web_search()
         else:
-            raise ValueError("Either directory_path, s3_bucket, or web_search_query must be provided.")
+            raise ValueError(
+                "Either directory_path, s3_bucket, or web_search_query must be provided."
+            )
 
         # Split documents
         splitter = self._get_text_splitter()
@@ -115,23 +121,24 @@ def pretty_print(docs: list):
         docs = [Document(page_content=d.text) for d in docs]
 
     if not all(hasattr(d, "page_content") for d in docs):
-        print(f"Not all documents have page_content attribute.")
+        print("Not all documents have page_content attribute.")
         return
-        
+
     print(
         f"\n{'-' * 100}\n".join(
-            [f"Document {i+1}:\n\n" + d.page_content for i, d in enumerate(docs)]
+            [f"Document {i + 1}:\n\n" + d.page_content for i, d in enumerate(docs)]
         )
     )
 
+
 def download_file(url: str, directory_path: str):
     os.makedirs(directory_path, exist_ok=True)
-    
+
     filename = os.path.join(directory_path, url.split("/")[-1])
     try:
         response = requests.get(url)
         response.raise_for_status()
-        with open(filename, 'wb') as file:
+        with open(filename, "wb") as file:
             file.write(response.content)
         print(f"Downloaded {url} to {filename}")
     except requests.RequestException as e:
