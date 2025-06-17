@@ -54,6 +54,7 @@ RAGAS_METRIC_MAP = {
     "precision": NonLLMContextPrecisionWithReference(),
 }
 
+
 class PubMedQATaskDataset(data.Dataset):
     def __init__(self, name, all_folds=False, split="test"):
         self.name = name
@@ -139,7 +140,7 @@ class PubMedQATaskDataset(data.Dataset):
             assert not jsonl, "Does not support jsonl if one_file_per_sample is True"
             for idx in range(len(self.data)):
                 filepath = os.path.join(
-                    pubmed_kb_dir, f'{self.data[idx]["id"]}.{file_ext}'
+                    pubmed_kb_dir, f"{self.data[idx]['id']}.{file_ext}"
                 )
                 with open(filepath, "w", encoding="utf-8") as f:
                     f.write(self.data[idx]["context"])
@@ -187,7 +188,6 @@ class RAGLLM:
                 top_k=kwargs["top_k"],
             )
         return llm
-
 
 
 class DocumentReader:
@@ -252,7 +252,7 @@ class RAGEmbedding:
     def load_model(self):
         print(f"Loading {self.model_type} embedding model ...")
         device = get_device_name()
-    
+
         if self.model_type == "hf":
             # Using bge base HuggingFace embeddings, can choose others based on leaderboard:
             # https://huggingface.co/spaces/mteb/leaderboard
@@ -422,6 +422,7 @@ class RagasEval:
         )
         return result
 
+
 def extract_yes_no(resp):
     match_pat = r"\b(?:yes|no)\b"
     match_txt = re.search(match_pat, resp, re.IGNORECASE)
@@ -437,13 +438,14 @@ def get_embed_model_dim(embed_model):
 
 def validate_rag_cfg(cfg):
     if cfg["query_mode"] == "hybrid":
-        assert (
-            cfg["hybrid_search_alpha"] is not None
-        ), "hybrid_search_alpha cannot be None if query_mode is set to 'hybrid'"
+        assert cfg["hybrid_search_alpha"] is not None, (
+            "hybrid_search_alpha cannot be None if query_mode is set to 'hybrid'"
+        )
     if cfg["vector_db_type"] == "weaviate":
-        assert (
-            cfg["weaviate_url"] is not None
-        ), "weaviate_url cannot be None for weaviate vector db"
+        assert cfg["weaviate_url"] is not None, (
+            "weaviate_url cannot be None for weaviate vector db"
+        )
+
 
 class RAGIndex:
     """
@@ -461,7 +463,6 @@ class RAGIndex:
     def create_index(self, docs, save=True, **kwargs):
         # Only supports Weaviate as of now
         if self.db_type == "weaviate":
-           
             weaviate_api_key = os.environ["WEAVIATE_API_KEY"]
             weaviate_client = weaviate.connect_to_wcs(
                 cluster_url=kwargs["weaviate_url"],
@@ -499,4 +500,3 @@ class RAGIndex:
                 index.storage_context.persist(persist_dir=self._persist_dir)
 
         return index
-

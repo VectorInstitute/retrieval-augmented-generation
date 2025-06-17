@@ -5,7 +5,7 @@ This notebook presents a RAG workflow for the [PubMed QA](https://pubmedqa.githu
 ## Requirements
 
 * Python 3.10+
-* [OpenAI](https://platform.openai.com/) API Key 
+* [OpenAI](https://platform.openai.com/) API Key
 * [Weaviate](https://console.weaviate.io/) cluster URL and API key
 
 ## Setup Instructions
@@ -45,7 +45,7 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
 5. **Install the Jupyter kernel:**
 
     ```bash
-    uv run ipython kernel install --user --name=rag-bootcamp  
+    uv run ipython kernel install --user --name=rag-bootcamp
     ```
 
 6. **Start Jupyter Lab with environment variables loaded:**
