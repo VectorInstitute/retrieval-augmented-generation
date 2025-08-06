@@ -1,0 +1,14 @@
+.venv/
+.git/
+.github/
+.ipynb_checkpoints/
+__pycache__/
+.gitignore
+.env
+README.md
+Dockerfile
+docker-compose.yml
+.dockerignore
+*.pyc
+*.pyo
+*.pyd
