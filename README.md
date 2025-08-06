@@ -87,7 +87,7 @@ You can also run the RAG Bootcamp notebooks inside a Docker container. This appr
     docker run --rm -it -p 8888:8888 --env-file .env rag-bootcamp
     ```
 
-    - This command maps port 8888 for Jupyter Lab access and mounts your current directory into the container.
+    - This command maps port 8888 for Jupyter Lab access in the container.
 
 3. **Access Jupyter Lab:**
 
