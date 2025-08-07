@@ -71,6 +71,31 @@ Follow these steps to set up your environment for the RAG Bootcamp notebooks:
 
 You are now ready to use the RAG Bootcamp notebooks!
 
+## Running Jupyter Lab with Docker
+
+You can also run the RAG Bootcamp notebooks inside a Docker container. This approach ensures a consistent environment without needing to install dependencies directly on your system.
+
+1. **Build the Docker image:**
+
+    ```bash
+    docker build -t rag-bootcamp .
+    ```
+
+2. **Run the Docker container:**
+
+    ```bash
+    docker run --rm -it -p 8888:8888 --env-file .env rag-bootcamp
+    ```
+
+    - This command maps port 8888 for Jupyter Lab access in the container.
+
+3. **Access Jupyter Lab:**
+
+    - After starting the container, copy the Jupyter Lab URL from the terminal and open it in your browser.
+
+> **Note:**  
+> Make sure your `.env` file is present in the project root before running the container.
+
 ## Opening Notebooks in Google Colab
 
 Each notebook in this repository includes an **"Open in Colab"** badge at the top. To run a notebook in Google Colab:
