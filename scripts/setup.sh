@@ -22,4 +22,9 @@ echo "Jupyter kernel installed."
 
 # Start Jupyter lab in the background
 echo "Starting Jupyter lab..."
-nohup uv run jupyter lab --no-browser --port=8888 --ip=0.0.0.0 --ServerApp.token='' & > jupyter.log 2>&1 &
+nohup bash -c "uv run jupyter lab \
+    --no-browser \
+    --ip=0.0.0.0 \
+    --port=8888 \
+    --NotebookApp.token=''" \
+    > /tmp/jupyter.log 2>&1 &
