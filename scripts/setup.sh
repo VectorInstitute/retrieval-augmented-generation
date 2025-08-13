@@ -20,6 +20,6 @@ echo "Virtual environment activated and dependencies synced."
 uv run ipython kernel install --user --name=retrieval-augmented-generation --display-name "RAG"
 echo "Jupyter kernel installed."
 
-# Start Jupyter lab
+# Start Jupyter lab in the background
 echo "Starting Jupyter lab..."
-uv run jupyter lab --no-browser --port=8888 --ip=0.0.0.0 --ServerApp.token=''
+nohup uv run jupyter lab --no-browser --port=8888 --ip=0.0.0.0 --ServerApp.token='' &
