@@ -1,6 +1,9 @@
 #!/bin/bash
 
-cd retrieval-augmented-generation
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+
 if [ -d ".venv" ]; then
     echo "Virtual environment already exists."
 else

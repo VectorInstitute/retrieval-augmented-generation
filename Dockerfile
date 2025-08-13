@@ -1,4 +1,4 @@
-FROM ghcr.io/astral-sh/uv:python3.10-bookworm-slim
+FROM ubuntu:22.04
 
 EXPOSE 8888
 
@@ -11,6 +11,9 @@ RUN apt-get update \
     jq \
     tar \
     unzip \
+    python3 \
+    python3-pip \
+    python3-venv \
     ca-certificates \
     build-essential \
     && rm -rf /var/lib/apt/lists/*
@@ -31,5 +34,8 @@ WORKDIR /home/${USER}
 # Copy the code into the container
 COPY --chown=${USER}:${USER} . /home/${USER}/retrieval-augmented-generation
 
+# Set the working directory
+WORKDIR /home/${USER}/retrieval-augmented-generation
+
 # Start the container and run the project setup script
-CMD ["bash", "retrieval-augmented-generation/scripts/setup.sh"]
+CMD ["bash", "scripts/setup.sh"]
