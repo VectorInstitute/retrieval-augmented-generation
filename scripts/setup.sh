@@ -1,6 +1,9 @@
 #!/bin/bash
 
-cd retrieval-augmented-generation
+# Install uv
+curl -LsSf https://astral.sh/uv/install.sh | sh
+export PATH="$HOME/.local/bin:$PATH"
+
 if [ -d ".venv" ]; then
     echo "Virtual environment already exists."
 else
@@ -17,6 +20,11 @@ echo "Virtual environment activated and dependencies synced."
 uv run ipython kernel install --user --name=retrieval-augmented-generation --display-name "RAG"
 echo "Jupyter kernel installed."
 
-# Start Jupyter lab
+# Start Jupyter lab in the background
 echo "Starting Jupyter lab..."
-uv run jupyter lab --no-browser --port=8888 --ip=0.0.0.0 --ServerApp.token=''
+nohup bash -c "uv run jupyter lab \
+    --no-browser \
+    --ip=0.0.0.0 \
+    --port=8888 \
+    --NotebookApp.token=''" \
+    > /tmp/jupyter.log 2>&1 &
