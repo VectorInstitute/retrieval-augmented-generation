@@ -27,7 +27,7 @@ dependencies = [
     "langchain-openai>=0.3.8",
     "ragas>=0.2.15",
     "rapidfuzz>=3.13.0",
-    "torch==2.1.2",
+    "torch==2.8.0",
     "weaviate-client==4.9.3",
 ]
 
