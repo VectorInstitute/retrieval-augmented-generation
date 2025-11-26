@@ -43,7 +43,7 @@ dependencies = [
   "tokenizers>=0.20",
   "torch==2.1.2",
   "torchvision>=0.15.2",
-  "transformers==4.46.3",
+  "transformers==4.53.0",
   "weaviate-client==4.9.3",
 ]
 
