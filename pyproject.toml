@@ -36,7 +36,7 @@ dependencies = [
   "pandas==2.2.1",
   "pypdf>=5.5.0",
   "ragas>=0.2.15",
-  "requests==2.32.3",
+  "requests==2.32.4",
   "safetensors>=0.4.2",
   "sentence-transformers==3.3.1",
   "tiktoken>=0.7.0,<0.8.0",
