@@ -19,7 +19,7 @@ dependencies = [
   "langchain-huggingface>=0.2.0",
   "langchain-openai>=0.3.8",
   "llama-hub==0.0.65; sys_platform == 'linux'",
-  "llama-hub==0.0.45; sys_platform == 'darwin'",
+  "llama-hub==0.0.67; sys_platform == 'darwin'",
   "llama-index>=0.12.37",
   "llama-index-core>=0.12.37",
   "llama-index-embeddings-huggingface>=0.2.3",
