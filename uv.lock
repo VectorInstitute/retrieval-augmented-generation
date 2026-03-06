@@ -4526,7 +4526,7 @@ dev = [
 
 [[package]]
 name = "ragas"
-version = "0.2.15"
+version = "0.3.0rc2"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "appdirs" },
@@ -4542,9 +4542,9 @@ dependencies = [
     { name = "pydantic" },
     { name = "tiktoken" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/6c/0f/04fddfa94744b1c3d8901aed8832a6b4193cc8e4886881f1bb88ff055350/ragas-0.2.15.tar.gz", hash = "sha256:2d0cd77b315a9c9c02ceb0a19ca8a48e82e1d02416587a2944ea51e6e327cd7b", size = 40867766, upload-time = "2025-04-24T16:39:28.734Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/ac/59/feab875f9af4e09fec32199cc2413630296f036e2d596fde2754de7b11c3/ragas-0.3.0rc2.tar.gz", hash = "sha256:ef5e0024476e51d9cd88453f8367605e90dda98ae7518ae15e4f4d8de9e28321", size = 159269, upload-time = "2025-07-17T01:44:55.889Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/f2/9b/a5641da8aab06e069885a9ffa1b4897878f14c5b9807a9e3c5f1f532a6a9/ragas-0.2.15-py3-none-any.whl", hash = "sha256:298cd3d1fe3bd21ca4d31023a55079740d7bdd27a8c915bb371cec3c50cde608", size = 190947, upload-time = "2025-04-24T16:39:25.841Z" },
+    { url = "https://files.pythonhosted.org/packages/ef/7c/ecc083b065f03bdc931f9a45f035c586346c21299e5b35a131b64ee16541/ragas-0.3.0rc2-py3-none-any.whl", hash = "sha256:0616dbbfa3572f16bfa29f3f011d3235fc76f939612d38f1951fe2d97ba102f0", size = 190264, upload-time = "2025-07-17T01:44:54.694Z" },
 ]
 
 [[package]]
